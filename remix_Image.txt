@@ -1,0 +1,22 @@
+pragma solidity ^0.4.24;
+
+contract Image {
+
+  uint256 imageCount = 0;
+  string[] images;
+
+  function getImageHash(uint index) public view returns(string) {
+      return images[index];
+  }
+
+  function getImageCount() public view returns(uint256) {
+      return imageCount;
+  }
+
+
+  function addHash(string hash) public payable {
+    images.push(hash);
+    imageCount = imageCount + 1;
+  }
+
+}
